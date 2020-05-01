@@ -11,11 +11,11 @@ pipeline {
                 }
                 }                
             }
+        }
             stage('Lint HTML'){
            steps{
              echo 'Lint HTML'   
              script {tidy -q -e index.html}
             } 
         }
-    }
 }
