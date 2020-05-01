@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
     stages {
@@ -9,14 +8,13 @@ pipeline {
                     withAWS(credentials:'aws-static') {
                 s3Upload(file:'index.html', bucket:'udacity-pipeline', path:'index.html')
                 }}                
-            }
-        },
-          stage('Lint HTML'){
+            }}
+        , stage('Lint HTML'){
            steps{
              echo 'hello world'   
              script {tidy -q -e index.html}
-           }   
+				}
+			} 
        }
         
      }
-}
