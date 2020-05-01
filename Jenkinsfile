@@ -10,7 +10,7 @@ pipeline {
                 s3Upload(file:'index.html', bucket:'udacity-pipeline', path:'index.html')
                 }}                
             }
-        }
+        },
           stage('Lint HTML'){
            steps{
              echo 'hello world'   
