@@ -8,14 +8,15 @@ pipeline {
                 withAWS(region:'us-east-2') {
                     withAWS(credentials:'aws-static') {
                 s3Upload(file:'index.html', bucket:'udacity-pipeline', path:'index.html')
-                }
-                }                
+                }}                
             }
         }
-            stage('Lint HTML'){
+          stage('Lint HTML'){
            steps{
-             echo 'Lint HTML'   
+             echo 'hello world'   
              script {tidy -q -e index.html}
-            } 
-        }
+           }   
+       }
+        
+     }
 }
